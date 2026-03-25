@@ -1,0 +1,13 @@
+{
+  "name": "inventory-in-memory-api",
+  "version": "1.0.0",
+  "description": "Node.js in-memory inventory API",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "test:api": "node tests/api.test.js"
+  },
+  "dependencies": {
+    "mssql": "^12.2.1"
+  }
+}

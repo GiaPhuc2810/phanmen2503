@@ -1,0 +1,123 @@
+{
+  "info": {
+    "name": "Inventory In Memory API",
+    "_postman_id": "8cb09c36-c25c-4689-b8c8-e24c0d9f1bd5",
+    "description": "Collection test inventory API luu trong RAM",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:3000"
+    },
+    {
+      "key": "productId",
+      "value": ""
+    },
+    {
+      "key": "inventoryId",
+      "value": ""
+    }
+  ],
+  "item": [
+    {
+      "name": "Create Product",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"IPhone 16 Pro\"\n}"
+        },
+        "url": "{{baseUrl}}/products"
+      }
+    },
+    {
+      "name": "Get All Inventories",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/inventories"
+      }
+    },
+    {
+      "name": "Get Inventory By ID",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/inventories/{{inventoryId}}"
+      }
+    },
+    {
+      "name": "Add Stock",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"product\": \"{{productId}}\",\n  \"quantity\": 10\n}"
+        },
+        "url": "{{baseUrl}}/inventories/add-stock"
+      }
+    },
+    {
+      "name": "Remove Stock",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"product\": \"{{productId}}\",\n  \"quantity\": 3\n}"
+        },
+        "url": "{{baseUrl}}/inventories/remove-stock"
+      }
+    },
+    {
+      "name": "Reservation",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"product\": \"{{productId}}\",\n  \"quantity\": 2\n}"
+        },
+        "url": "{{baseUrl}}/inventories/reservation"
+      }
+    },
+    {
+      "name": "Sold",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"product\": \"{{productId}}\",\n  \"quantity\": 1\n}"
+        },
+        "url": "{{baseUrl}}/inventories/sold"
+      }
+    }
+  ]
+}
